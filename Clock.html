@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="WC.css">
+</head>
+
+<body>
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+
+    <script>
+        function clock(){
+        const deg=6;
+        var hr=document.getElementById('hr');
+        var mn=document.getElementById('mn');
+        var sc=document.getElementById('sc');
+
+            var day=new Date();
+            var hh=day.getHours() * 30;
+            var mi=day.getMinutes() * deg;
+            var ss=day.getSeconds() * deg;
+
+            hr.style.transform= `rotateZ(${(hh)+(mi/12)}deg)`;
+            mn.style.transform= `rotateZ(${mi}deg)`;
+            sc.style.transform= `rotateZ(${ss}deg)`;
+        }
+        
+
+        var time = setInterval(clock, 1000);
+
+    </script>
+</body>
+
+</html>
