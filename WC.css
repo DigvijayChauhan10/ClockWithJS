@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    padding: 0;
+    /*background: #e8eff5;*/
+    background:#e62f89;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.clock{
+    width:250px;
+    height:250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border:10px solid #fff;
+    border-radius: 50%;
+    box-shadow:inset 0 0 30px rgba(0,0,0,.1),
+                0 20px 20px rgba(0,0,0,.2),
+                0 0 0 4px rgba(255,255,255,1);
+    /*box-shadow: 8px 8px 15px #bbcfda,
+                -4px -4px 13px #fff,
+                inset 4px 4px 2px rgba(209,217,230,.2),
+                inset -4px -4px 2px rgba(255,255,255,.2);*/
+    
+    /*box-shadow: inset -2px -2px 8px rgba(255,255,255,1),
+                inset -2px -2px 12px rgba(255,255,255,.5),
+                 2px 2px 4px rgba(255,255,255,.1),
+                2px 2px 8px rgba(0,0,0,.15);*/
+    
+    background: white url(clock.png);
+    background-size: cover;
+}
+.clock:before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: black;
+    z-index: 100;
+    border-radius: 50%;
+}
+.clock .hour,
+.clock .min,
+.clock .sec
+{
+    position:absolute;
+}
+.clock .hour,.hr{
+    width:120px;
+    height:120px;
+}
+
+.clock .min,.mn{
+    width: 150px;
+    height:150px;
+}
+
+.clock .sec,.sc{
+    width:180px;
+    height:180px;
+}
+.hr, .mn, .sc{
+    display: flex;
+    position: absolute;
+    border-radius: 50%;
+    justify-content: center;
+}
+.hr:before{
+    content: '';
+    position: absolute;
+    width:6px;
+    height:60px;
+    background: red;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+
+.mn:before{
+    content: '';
+    position: absolute;
+    width:4px;
+    height:80px;
+    background:black;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+.sc:before{
+    content: '';
+    position: absolute;
+    width:2px;
+    height:110px;
+    background:#008eff;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
+
+@media screen and (max-width:700px){
+    .clock{
+        width:220px;
+        height:220px;
+    }
+}
